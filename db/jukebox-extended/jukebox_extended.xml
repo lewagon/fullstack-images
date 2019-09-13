@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
+<!-- Active URL: http://db.lewagon.com/ -->
+<sql>
+  <datatypes db="mysql">
+    <group color="rgb(238,238,170)" label="Numeric">
+      <type label="TINYINT" length="0" quote="" sql="TINYINT" />
+      <type label="SMALLINT" length="0" quote="" sql="SMALLINT" />
+      <type label="MEDIUMINT" length="0" quote="" sql="MEDIUMINT" />
+      <type label="INT" length="0" quote="" sql="INT" />
+      <type label="Integer" length="0" quote="" sql="INTEGER" />
+      <type label="BIGINT" length="0" quote="" sql="BIGINT" />
+      <type label="Decimal" length="1" quote="" re="DEC" sql="DECIMAL" />
+      <type label="Single precision" length="0" quote="" sql="FLOAT" />
+      <type label="Double precision" length="0" quote="" re="DOUBLE" sql="DOUBLE" />
+    </group>
+    <group color="rgb(255,200,200)" label="Character">
+      <type label="Char" length="1" quote="'" sql="CHAR" />
+      <type label="Varchar" length="1" quote="'" sql="VARCHAR" />
+      <type label="Text" length="0" quote="'" re="TEXT" sql="MEDIUMTEXT" />
+      <type label="Binary" length="1" quote="'" sql="BINARY" />
+      <type label="Varbinary" length="1" quote="'" sql="VARBINARY" />
+      <type label="BLOB" length="0" quote="'" re="BLOB" sql="BLOB" />
+    </group>
+    <group color="rgb(200,255,200)" label="Date &amp; Time">
+      <type label="Date" length="0" quote="'" sql="DATE" />
+      <type label="Time" length="0" quote="'" sql="TIME" />
+      <type label="Datetime" length="0" quote="'" sql="DATETIME" />
+      <type label="Year" length="0" quote="" sql="YEAR" />
+      <type label="Timestamp" length="0" quote="'" sql="TIMESTAMP" />
+    </group>
+    <group color="rgb(200,200,255)" label="Miscellaneous">
+      <type label="ENUM" length="1" quote="" sql="ENUM" />
+      <type label="SET" length="1" quote="" sql="SET" />
+      <type label="Bit" length="0" quote="" sql="bit" />
+    </group>
+  </datatypes>
+  <table x="249" y="187" name="albums">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="artist_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="artists" row="id" />
+    </row>
+    <row name="title" null="1" autoincrement="0">
+      <datatype>VARCHAR</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="73" y="158" name="artists">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="name" null="1" autoincrement="0">
+      <datatype>VARCHAR</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="107" y="300" name="genres">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="name" null="1" autoincrement="0">
+      <datatype>VARCHAR</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="113" y="442" name="media_types">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="name" null="1" autoincrement="0">
+      <datatype>VARCHAR</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="413" y="266" name="tracks">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="album_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="albums" row="id" />
+    </row>
+    <row name="genre_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="genres" row="id" />
+    </row>
+    <row name="mediatype_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="media_types" row="id" />
+    </row>
+    <row name="name" null="1" autoincrement="0">
+      <datatype>VARCHAR</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="composer" null="1" autoincrement="0">
+      <datatype>VARCHAR</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="miliseconds" null="1" autoincrement="0">
+      <datatype>INT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="bytes" null="1" autoincrement="0">
+      <datatype>INT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="unit_price" null="1" autoincrement="0">
+      <datatype>INT</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="893" y="444" name="customers">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="first_name" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="last_name" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="country" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="email" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="562" y="398" name="invoice_lines">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="track_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="tracks" row="id" />
+    </row>
+    <row name="invoice_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="invoices" row="id" />
+    </row>
+    <row name="unit_price" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="755" y="358" name="invoices">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="customer_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="customers" row="id" />
+    </row>
+    <row name="invoice_date" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="total" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="576" y="160" name="playlist_tracks">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="playlist_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="playlists" row="id" />
+    </row>
+    <row name="track_id" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+      <relation table="tracks" row="id" />
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+  <table x="807" y="139" name="playlists">
+    <row name="id" null="1" autoincrement="1">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <row name="name" null="1" autoincrement="0">
+      <datatype>TINYINT</datatype>
+      <default>NULL</default>
+    </row>
+    <key type="PRIMARY" name="">
+      <part>id</part>
+    </key>
+  </table>
+</sql>
